@@ -1,0 +1,31 @@
+<form class="parent">
+  <label class="font-bold text-lg text-white lobster-regular sm:text-3xl">¡Formulario Matricula de inscripción <label class="text-blue-500 animate-pulse duration-300 text-xl sm:text-4xl">2024</label> !</label>
+    <p class="dni-input">
+      <mat-form-field>
+          <mat-label>Introduce tu DNI Por favor</mat-label>
+          <mat-hint>Debe tener de 9 digitos.</mat-hint>
+          <input matInput required minlength="9" [formControl]="dni"
+           />
+            <mat-error *ngIf="dni.value && dni.value.length <= 9">EL DNI DEBE TENER 9 DÍGITOS.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button [disabled]="dni.value && dni.value.length <= 9" (click)="onSubmit($event)">Buscar</button>
+    </p>
+    <p class="autoData-input flex items-center flex-col pointer-events-none">
+      <label class="montserrat">Nombre</label>
+      <span class="w-1/2 bg-gray-100 rounded-sm text-center text-gray-400 text-lg montserrat-input">{{data?data.first_name:'Introduce tu DNI'}}</span>
+    </p>
+    <p class="autoData-input flex items-center flex-col pointer-events-none">
+      <label  class="montserrat">Apellidos</label>
+      <span class="w-1/2 bg-gray-100 rounded-sm text-center text-gray-400 text-lg montserrat-input">{{data?data.last_name:'Introduce tu DNI'}}</span>
+    </p>
+    <p class="autoData-input flex items-center flex-col pointer-events-none">
+      <label class="montserrat">Ciudad</label>
+      <span class="w-1/2 bg-gray-100 rounded-sm text-center text-gray-400 text-lg montserrat-input">{{data?data.city:'Introduce tu DNI'}}</span>
+    </p>
+    <p class="autoData-input flex items-center flex-col pointer-events-none">
+      <label class="montserrat">Edad</label>
+      <span class="w-1/2 bg-gray-100 rounded-sm text-center text-gray-400 text-lg montserrat-input">{{data? data.age + " años":'Introduce tu DNI'}}</span>
+    </p>
+    <button mat-stroked-button disabled> Siguiente </button>
+  </form>
+  
