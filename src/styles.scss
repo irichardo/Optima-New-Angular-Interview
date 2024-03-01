@@ -4,7 +4,13 @@
 @tailwind utilities;
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html{
+  background-image: url('../src/assets/liquid-cheese.png');
+  background-size: cover;
+  background-size:100% ;
+}
 
 .lobster-regular {
     font-family: "Lobster", sans-serif;
@@ -23,5 +29,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 300;
+    font-style: normal;
+  }
+  
+  .montserrat-error{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
     font-style: normal;
   }

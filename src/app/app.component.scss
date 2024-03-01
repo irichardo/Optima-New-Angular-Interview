@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background:rgb(255, 110, 43);
+    min-width: 20rem;
+    min-height: 10rem;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 5px;
+    
+    @media (max-width: 768px) {
+        width: 90%; // Ajusta el ancho al 90% en pantallas más pequeñas
+        height: 80vh; // Ajusta la altura automáticamente
+      }
+  }

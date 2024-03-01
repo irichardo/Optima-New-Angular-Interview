@@ -7,13 +7,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { User } from 'src/app/types/types';
 import { DniApiService } from 'src/app/service/dni-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
   standalone: true,
   imports: [CommonModule, MatInputModule, MatButtonModule, MatSelectModule, MatFormFieldModule, ReactiveFormsModule],
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss','../../app.component.scss']
 })
 export class FormComponent {
 
@@ -24,12 +25,7 @@ export class FormComponent {
     message: ''
   }
 
-  constructor(private myServices: DniApiService, private fb: FormBuilder) { }
-
-  // // isNotNumber(): boolean{
-  // //   if(typeof String(this.dni) !== 'number') return true
-  // //   else return false
-  // // }
+  constructor(private myServices: DniApiService, private router: Router) { }
 
   onSubmit(event: Event) {
     event.preventDefault()
@@ -38,7 +34,6 @@ export class FormComponent {
       console.log(dni)
       if (isNaN(dni)) throw new Error('Por favor solo ingresa números.')
       this.myServices.getUserDNI(dni).subscribe(user => {
-        console.log(user)
         this.data = user
       }, error => {
         this.error.message = 'Por favor introduce un DNI valido.';
@@ -51,4 +46,11 @@ export class FormComponent {
       this.error.status = true
     }
   }
+
+  redirectTo(event:Event){
+    event.preventDefault()
+    this.router.navigate(['form2'])
+  }
+
+
 }
