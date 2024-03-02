@@ -5,9 +5,10 @@
 - ✅ Reactive Forms.
 - ✅ Angular Material Forms.
 - ✅ Validators.
-- 👌 Ok, we have a little troble with the architec, but is ok i think.
+- 👌 Ok, we have a little trouble with the architecture, but is ok i think.
+- ✅ barrel imports for more clean code.(I love Barrel ✨)
 - ✅ Beautiful UI
-- ✅ use SSR
+- ✅ SSR
 
 ## For use the repository need to install the api dummy using there:
 
