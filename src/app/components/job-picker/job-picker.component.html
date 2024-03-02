@@ -1,4 +1,5 @@
 
-<div class="card flex justify-content-center">
-    <p-dropdown [options]="jobBusinessList" optionLabel="name" [showClear]="true" placeholder="Selecciona una Empresa"></p-dropdown>
+<div [formGroup]="form" class="card flex justify-content-center">
+    <p-dropdown [options]="jobBusinessList" [required]="true" 
+     formControlName="selectedBusiness" optionLabel="name" [showClear]="true" placeholder="Selecciona una Empresa" ></p-dropdown>
 </div>

@@ -1,9 +1,13 @@
 <form [formGroup]="formGroup">
+    <!-- Need to check the Null state for remove that error when
+    the input is null, but the inputNumeber try to check if this is a number -->
   <p-inputNumber
-    [ariaValueText]="true"
+    [allowEmpty]="true"
     [useGrouping]="false"
     formControlName="year"
+    [min] = "0"
     [maxlength]="2"
     placeholder="Introduce años de experiencia"
   ></p-inputNumber>
+  <button (click)="onSubmit()">Probar</button>
 </form>

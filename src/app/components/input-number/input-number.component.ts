@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 
 @Component({
@@ -10,10 +10,14 @@ import { InputNumberModule } from 'primeng/inputnumber';
   styleUrl: './input-number.component.scss'
 })
 export class InputNumberComponent implements OnInit {
+  constructor(private fb:FormBuilder){}
   formGroup : FormGroup
   ngOnInit(): void {
-    this.formGroup = new FormGroup({
-      year: new FormControl<Number|null>(null)
-  });
+    this.formGroup = this.fb.group({
+      year:['',Validators.nullValidator]
+    })
+  }
+  onSubmit(){
+    console.log(this.formGroup.value)
   }
 }

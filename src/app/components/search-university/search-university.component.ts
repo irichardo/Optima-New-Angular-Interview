@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AutoCompleteCompleteEvent, AutoCompleteModule } from 'primeng/autocomplete';
 import { UniversityListService } from 'src/app/service/university-list.service';
 
-interface universityName{
-  name:string
+interface universityName {
+  name: string
 }
 
 
@@ -17,30 +17,37 @@ interface universityName{
 })
 
 export class SearchUniversityComponent implements OnInit {
-  universityList:universityName[]
-  formGroup : FormGroup
-  filteredUniversities:universityName[]
-  constructor(private universityService:UniversityListService){}
+  collegeList: universityName[]
+  form: FormGroup
+  filteredUniversities: universityName[]
+  constructor(private universityService: UniversityListService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.universityService.getUniversityList().then((university)=>{
-      this.universityList = university
+    this.universityService.getUniversityList().then((university) => {
+      this.collegeList = university
     })
 
-    this.formGroup = new FormGroup({
-      selectedCountry: new FormControl<object|null>(null)
-    })
+    this.form = this.fb.group({
+      selectedCollege: ['', Validators.required]
+    });
 
-}
-search(event: AutoCompleteCompleteEvent) {
-  let filtered: any[] = [];
-  let query = event.query;
-  this.universityList?.forEach((university)=>{
-    if(university.name.toLowerCase().indexOf(query.toLowerCase()) == 0 || university.name.toLowerCase().includes(query.toLowerCase())){
-      filtered.push(university)
+  }
+  search(event: AutoCompleteCompleteEvent) {
+    let filtered: any[] = [];
+    let query = event.query;
+    this.collegeList?.forEach((college) => {
+      if (college.name.toLowerCase().indexOf(query.toLowerCase()) == 0 || college.name.toLowerCase().includes(query.toLowerCase())) {
+        filtered.push(college)
+      }
+    })
+    this.filteredUniversities = filtered;
+  }
+
+  onSubmit(){
+    const verify = this.form.get('selectedCollege')?.value ?? false;
+    if(verify){
+      console.log(verify)
     }
-  })
-  this.filteredUniversities = filtered;
-}
+  }
 
 }

@@ -11,8 +11,5 @@ import { JobPickerComponent } from 'src/app/components';
     CommonModule
   ]
 })
-export class SecondFormPageModule implements OnInit {
-  ngOnInit(): void {
-      
-  }
+export class SecondFormPageModule  {
  }
