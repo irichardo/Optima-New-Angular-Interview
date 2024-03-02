@@ -6,7 +6,6 @@ import { FormComponent } from 'src/app/components/form/form.component';
   declarations: [],
   imports: [
     CommonModule,FormComponent
-    // ,LandingRoutingModule
   ]
 })
 export class LandingModule { }

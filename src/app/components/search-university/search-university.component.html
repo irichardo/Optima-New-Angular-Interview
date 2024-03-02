@@ -1,0 +1,4 @@
+<form [formGroup]="formGroup">
+    <p-autoComplete
+    [suggestions]="filteredUniversities!" (completeMethod)="search($event)" field="name" placeholder="Introduce su nombre"/>
+  </form>

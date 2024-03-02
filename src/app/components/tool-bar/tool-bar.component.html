@@ -1,1 +1,30 @@
-<p>tool-bar works!</p>
+<nav>
+    <div class="w-screen h-[10vh] flex" style="background-color:rgb(255, 110, 43);">
+        <div class="w-1/6 h-full flex items-center justify-center">
+            <img src="../../../assets/Logo-optima.png" alt="Logo de optima">
+        </div>
+        <div class="w-4/6 montserrat text-xl">
+            <ul class="flex justify-around items-center w-full h-full text-white">
+                <li class="rounded-xl w-12 h-12 bg-white flex items-center justify-center">
+                    <!-- <span class="rounded-xl w-10 h-10 flex overflow-hidden pointer-events-none"> -->
+                        <button (click)="toFirstPage($event)" class="w-[80%] h-[80%] bg-red-400 hover:bg-red-500 transition-all duration-200 rounded-lg">1</button>
+                    <!-- </span> -->
+                </li>
+                <li class="rounded-xl w-12 h-12 bg-white flex items-center justify-center">
+                    <!-- <span class="rounded-xl w-10 h-10 flex overflow-hidden pointer-events-none"> -->
+                        <button  (click)="toSecondPage($event)" class="w-[80%] h-[80%] bg-red-400 hover:bg-red-500 transition-all duration-200 rounded-lg">2</button>
+                    <!-- </span> -->
+                </li>
+                <li class="rounded-xl w-12 h-12 bg-white flex items-center justify-center">
+                    <!-- <span class="rounded-xl w-10 h-10 flex overflow-hidden pointer-events-none"> -->
+                        <button  (click)="toThirdPage($event)" class="w-[80%] h-[80%] bg-red-400 hover:bg-red-500 transition-all duration-200 rounded-lg">3</button>
+                    <!-- </span> -->
+                </li>
+            </ul>
+        </div>
+        <div class="w-1/6 flex items-center justify-center lobster-regular md:text-xl lg:text-3xl text-white">
+            Prueba Tecnica<br/>
+            Ricardo Huallanca
+        </div>
+    </div>
+</nav>

@@ -8,6 +8,7 @@ import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule } from '@angul
 import { User } from 'src/app/types/types';
 import { DniApiService } from 'src/app/service/dni-api.service';
 import { Router } from '@angular/router';
+import { FormDataService } from 'src/app/service/form-data-service.service';
 
 @Component({
   selector: 'app-form',
@@ -25,7 +26,9 @@ export class FormComponent {
     message: ''
   }
 
-  constructor(private myServices: DniApiService, private router: Router) { }
+
+
+  constructor(private myServices: DniApiService, private router: Router, public formService:FormDataService) { }
 
   onSubmit(event: Event) {
     event.preventDefault()

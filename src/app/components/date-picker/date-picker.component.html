@@ -1,8 +1,7 @@
 <mat-form-field>
     <mat-label>{{name}}</mat-label>
-    <input matInput [matDatepicker]="picker">
+    <input matInput [required]="mandatory" [matDatepicker]="picker">
     <mat-hint>MM/DD/YYYY {{ mandatory ? '(Obligatorio)' : '(Opcional)'}}</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-    <button (click)="logName($event)">Prueba</button>
   </mat-form-field>

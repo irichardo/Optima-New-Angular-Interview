@@ -4,4 +4,7 @@
   >
   <app-date-picker [name]="'Fecha de nacimiento'" [mandatory]="true" />
   <app-date-picker [name]="'Nacimiento de tu conyugue'" [mandatory]="false"  />
+  <button mat-raised-button  (click)="redirectTo($event)">
+    Siguiente
+  </button>
 </form>
